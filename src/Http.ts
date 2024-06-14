@@ -19,6 +19,7 @@ service.interceptors.request.use(
     const headers: any = {}
     if (token) {
       headers.Authorization = token;
+      headers['X-Access-Token'] = token;
       headers['Tenant-Id'] = 0;
       headers['X-Sign'] = '41C11FF7B1DDF568F776415D3BEB1D2F';
       headers['X-Timestamp'] = '1718272081475';

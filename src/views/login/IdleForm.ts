@@ -1,21 +1,17 @@
 import { reactive } from 'vue';
 import {
-  MessagePlugin,
-  FormProps,
   CustomValidator,
 } from "tdesign-vue-next";
 
-import Form from './Form';
-import LoginModel from "@/models/Login"
+import Form from '@/utils/forms/Form';
 
-export default class LoginForm extends Form {
-  
+export default class IdleForm extends Form {
   constructor() {
     super();
 
     this.formData = reactive({
-      username: "",
-      password: "",
+      username: "admin",
+      password: "Aa123456.",
     });
 
     this.rules = {
@@ -45,22 +41,6 @@ export default class LoginForm extends Form {
     };
   }
 
-  onSubmit: FormProps["onSubmit"] = ({ validateResult, firstError, e }) => {
-    e && e.preventDefault();
-    if (validateResult === true) {
-      MessagePlugin.success("提交成功");
-      console.log('formData', this.formData);
-
-      LoginModel.getPhone({
-        ...this.formData,
-        browserCode: null
-      });
-
-    } else {
-      console.log("Validate Errors: ", firstError, validateResult);
-    }
-  }
-
   passwordValidator: CustomValidator = (val) => {
     if (val.length > 0 && val.length <= 2) {
       return {
@@ -82,6 +62,5 @@ export default class LoginForm extends Form {
       type: "success",
     };
   }
-
 
 }

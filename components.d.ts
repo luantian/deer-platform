@@ -15,6 +15,7 @@ declare module 'vue' {
     TFormItem: typeof import('tdesign-vue-next')['FormItem']
     TInput: typeof import('tdesign-vue-next')['Input']
     TSpace: typeof import('tdesign-vue-next')['Space']
+    TTable: typeof import('tdesign-vue-next')['Table']
     Welcome: typeof import('./src/components/Welcome.vue')['default']
   }
 }

@@ -9,7 +9,8 @@ const router = createRouter({
   routes: [
     { path: '/', component: () => import("@/views/Welcome.vue"), },
     { path: '/test', component: () => import("@/views/Test.vue"), },
-    { path: '/login', component: () => import("@/views/login.vue"), },
+    { path: '/login', component: () => import("@/views/login/login.vue"), },
+    { path: '/elevatorList', component: () => import("@/views/elevator/list.vue"), },
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import("@/views/system/notFound.vue") }, // 通配符路由
   ],
 })
